@@ -2,7 +2,7 @@
 In order to write software, we first need to prepare an environment with in which to 
 develop.  A software development environment is different for every language, operating
 system, and machine architecture.  The steps here will outline the general process for
-setting up an environment, though it will specifcally look at getting your environment
+setting up an environment, though it will specifically look at getting your environment
 ready for C development.
 
 ## What is a development environment?
@@ -15,9 +15,9 @@ cooking technique: tools of the trade.
 ## Note on terminal applications
 Up until now, I suspect many of you have only ever used Graphical User Interfaces (GUI) and
 the world of Terminal User Interfaces (TUI) can be a bit intimidating. While it takes some
-getting use to, I'd recommend embrasing the terminal whole-heartedly. UI and UX design
-are unique and challenging diciplines and, sometimes, the people making software aren't
-exactly the most aethetically gifted.  Great software to solve many problems are available
+getting use to, I'd recommend embracing the terminal whole-heartily. UI and UX design
+are unique and challenging discipline and, sometimes, the people making software aren't
+exactly the most aesthetically gifted.  Great software to solve many problems are available
 in the terminal if you're willing to overcome the user interface.
 
 ### Terminal navigation
@@ -26,18 +26,24 @@ Music, Videos, PDFs, etc. all live within a "file system"; a structured way of g
 files into "directories" and assigning "permissions".  The most basic tasks that you will
 need to complete on a regular basis are creating, renaming, moving, and deleting files.
 As such, you should be well familiar with the basics of navigating the file system in 
-ther terminal.  Unfortuneately, this is where there is a rather noticable difference
+the terminal.  Unfortunately, this is where there is a rather noticeable difference
 between Windows and OSX.  The commands for navigation and interacting with your file
 system differ between the two major OSes.  Additionally, as of Windows 10, Microsoft has 
 put in an effort to be more friendly to software developer who usually work on POSIX OSes
 (Linux, OSX, BSD, etc.) so Windows has a bit of duplication depending on if you are using
 PowerShell or CMD.  I recommend using PowerShell
 
-| Description                         | OSX  | Windows       |
-| -----                               | ---- | ---           |
-| directory | `ls` | `ls` or `dir` |
-| List files in the current directory | `ls` | `ls` or `dir` |
-|                                     |      |               |
+| Description                         | OSX                        | Windows                      |
+| -----                               | ----                       | ---                          |
+| Print your current directory        | `pwd`                      | `cd`                         |
+| List files in the current directory | `ls`                       | `dir`                        |
+| Change to a directory               | `cd ${dir}`                | `cd ${dir}                   |
+| Move/rename a file                  | `mv ${oldname} ${newname}` | `move ${oldname} ${newname}` |
+| Copy a file                         | `cp ${file} ${newfile}`    | `copy ${file} ${newfile}`    |
+| Delete a file                       | `rm ${filename}`           | `del`                        |
+| Delete an empty folder              | `rmdir ${dirname}`         | `rmdir ${dirname}`           |
+| Create a directory                  | `mkdir ${dirname}`         | `mkdir ${dirname}`           |
+| Clear the terminals                 | `clear`                    | `cls`                        |
 
 ## Setup
 To setup a development environment you need to:
@@ -156,8 +162,7 @@ In VSCode, there is an Extensions tab in the left hand column. Install the follo
 
 ### 5. Version Control
 #### Windows
-Download the appropriate **Standalone Installer** from here 
-https://git-scm.com/download/win
+Download the appropriate [**Standalone Installer**](https://git-scm.com/download/win)
 
 Once downloaded, run the installer, the numbers below will outline which settings you
 should have on the various menus:
@@ -194,9 +199,9 @@ git config --global user.email "${Your email}"
 
 #### Git GUI
 Git is an extremely powerful tool, but one with a pretty steep learning curve.  There is a
-Desktop GUI application that conntects `git` with GitHub and makes file management a bit 
+Desktop GUI application that connects `git` with GitHub and makes file management a bit 
 easier to handle.  I'm not a fan of this tool as it hides some of the much more powerful
-features of `git` and comes with a certain amount of "vendor lockin" in an attempt to make
+features of `git` and comes with a certain amount of "vendor lock-in" in an attempt to make
 you think GitHub is the only place on the internet to share source code.  While I
 recommend that everyone learn to use `git` in the terminal, I understand that not everyone
 has the time to do so and provide the following link to the 
@@ -225,11 +230,22 @@ push a commit.  Not a problem, but pretty annoying.  For interested parties,
 cat ~/.ssh/*.pub
 ```
 Copy the output of this command (a large block of random letter and numbers).  Go to
-https://github.com/settings/keys and click `New SSH Key`.  Paste the output of the `cat`
-command and name it something.
+(https://github.com/settings/keys)[https://github.com/settings/keys] 
+and click `New SSH Key`.  Paste the output of the `cat` command and name it something.
 
 
 ## Testing out the environment
+To make sure that your environment is working, I've create a simple "hello world"
+project that should immediately compile and run without issue.  Clone the following
+repository using
+```
+git clone git@github.com:Bekreth/basic_c_test.git
+```
+Once the project has been cloned, follow the directions of the README.md. I've
+intentionally written the README.md to match a lot of what these types of documents
+(sadly) usually look like.  For Windows users, you'll have more difficulty as these
+documents are typically written for POSIX machines with an understand set of programs
+that may not be available to Windows machines by default.
 
 
 ## Additional learning resources
@@ -237,11 +253,11 @@ The goal of this document is to get you setup for development, so we've installe
 of tools.  There hasn't been the time necessary to learn how to use all these tools, or
 even what most of them do.  In following meetings, I'll go into detail about these, how and
 when you'd want to use them, but in the mean time, here is a link to a learning resource
-for the most powerful tool currently in your arsonal: Git
+for the most powerful tool currently in your arsenal: Git
 
-https://learngitbranching.js.org/
+[https://learngitbranching.js.org/](https://learngitbranching.js.org/)
 
-This online game teaches you the basic commands of `git` and I'd recommend doing at least
-lessons 1, 2, 3 of Intro in Main and 1-6 of Push-Pull in Remote.  This will give you the
-basic tools to understand the most used `git` operations and there is a wonderful graphic
-to show what these various commands are doing.
+This online game teaches you the basic commands of `git` and I'd recommend doing at 
+least lessons 1, 2, 3 of Intro in Main and 1-6 of Push-Pull in Remote.  This will 
+give you the basic tools to understand the most used `git` operations and there is 
+a wonderful graphic to show what these various commands are doing.
