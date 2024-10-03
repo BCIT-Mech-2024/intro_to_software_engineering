@@ -114,6 +114,10 @@ MinGW Installation Manager:
 | mingw32-mingwrt      | 5.0.2      | dev, dll      |
 | mingw32-w32api       | 5.0.2      | dev           |
 
+
+Next, grab the `.msi` file from [CMake](https://cmake.org/download/) and install
+it. This fill be helpful for future use.
+
 #### OSX
 To install all the necessary support files, run 
 ```sh
@@ -132,6 +136,11 @@ After you've finished installing `brew`
 brew install gcc
 ```
 
+Following this, install CMake with
+```sh
+brew install cmake
+```
+
 **WARNING!** **WARNING!**
 
 > As a general rule, you should _NOT_ trust a random bash command that uses `curl` like this.
@@ -146,8 +155,38 @@ some degree of trust in the author of the command
 appropriately updated your `PATH` variable to make sure the binaries are accessible to
 the OS.  To validate that this is true, check that you can find the binaries with
 the following commands:
-* **Window:** `Get-Command gcc` 
-* **OSX:** `which gcc` 
+
+#### Windows
+After you finish installing the above packages, you'll need to update your `PATH`
+variable for the new location.  The packages were most likely saved to your computer
+at the location `C:\MinGW`, but this will be dependent on your system and how you
+initially installed the package installer.  Look in your `C:\` drive for the folder.
+Once located, search in the Windows Search Bar (bottom of the screen) for "Environment
+Variables".  You want to click on a setting for Edit Enviromental Variables, and then
+choose to edit the `PATH` variable and add a line for `C:\MinGW\bin` (or whatever the
+path is where you installed the packages).
+
+You will need to open a new terminal session after updating the `PATH` variable.  Check
+to see if you this update worked by running `gcc --version`.  You should see something
+along the lines of 
+
+```
+gcc (GCC) X.X.X
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
+
+#### OSX
+Check to see if you this update worked by running `gcc --version`.  You should see
+something along the lines of 
+
+```
+gcc (GCC) X.X.X
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
 
 ### 3. Code Editor
 Go to the [VS Code](https://code.visualstudio.com/download) website and download the
@@ -161,6 +200,11 @@ In VSCode, there is an Extensions tab in the left hand column. Install the follo
 * Makefile Tools, by Microsoft
 
 ### 5. Version Control
+The version control system we will be using is call `git`.  There are many other tools
+that are in this space, but `git` is extremely common and easy to find resources on.
+In addition to setting up `git`, I'd ecourage everyone to create a GitHub account as
+this is a powerful tool for sharing and collaborating on source code.
+
 #### Windows
 Download the appropriate [**Standalone Installer**](https://git-scm.com/download/win)
 
@@ -198,20 +242,21 @@ git config --global user.email "${Your email}"
 ```
 
 #### Git GUI
-Git is an extremely powerful tool, but one with a pretty steep learning curve.  There is a
-Desktop GUI application that connects `git` with GitHub and makes file management a bit 
-easier to handle.  I'm not a fan of this tool as it hides some of the much more powerful
-features of `git` and comes with a certain amount of "vendor lock-in" in an attempt to make
-you think GitHub is the only place on the internet to share source code.  While I
-recommend that everyone learn to use `git` in the terminal, I understand that not everyone
-has the time to do so and provide the following link to the 
+Git is an extremely powerful tool, but one with a pretty steep learning curve.  There 
+is a Desktop GUI application that connects `git` with GitHub and makes file management
+a bit easier to handle.  I'm not a fan of this tool as it hides some of the much more
+powerful features of `git` and comes with a certain amount of "vendor lock-in" in an
+attempt to make you think GitHub is the only place on the internet to share source
+code.  While I recommend that everyone learn to use `git` in the terminal, I understand
+that not everyone has the time to do so and provide the following link to the 
 [GitHub Desktop Client](https://desktop.github.com/download/)
 
 ### 6. Authentication
-Authentication is the process of setting up your device with the appropriate passwords,
-private keys, and associated other networking information to allow you to access protected
-resources.  While no explicit authentication looks like it will be necessary for the
-upcoming C course, I would recommend everyone setup a GitHub account.
+Authentication is the process of setting up your device with the appropriate 
+passwords, private keys, and associated other networking information to allow you
+to access protected resources.  While no explicit authentication looks like it will
+be necessary for the upcoming C course, I would recommend everyone setup a GitHub
+account.
 
 After establishing an account, you'll need to generate a public/private key pair and 
 give GitHub your private key so that you can easily push and pull resources from your 
