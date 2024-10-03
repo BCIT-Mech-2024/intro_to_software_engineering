@@ -284,7 +284,7 @@ To make sure that your environment is working, I've create a simple "hello world
 project that should immediately compile and run without issue.  Clone the following
 repository using
 ```
-git clone git@github.com:Bekreth/basic_c_test.git
+git clone git@github.com:BCIT-Mech-2024/basic_c_test.git
 ```
 Once the project has been cloned, follow the directions of the README.md. I've
 intentionally written the README.md to match a lot of what these types of documents
